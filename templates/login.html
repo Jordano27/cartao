@@ -1,0 +1,27 @@
+{% if erro == 1 %}
+A senha nao esta correta   
+
+{% endif %}
+
+
+<form action="login_verifica.php" method="post">
+   
+    <div>
+
+        <input type="text" name="nome" id="nome" placeholder="nome">
+
+    </div>
+
+    <div>
+
+        <input type="password" name="datanasc" id="datanasc" placeholder="data de nascimento">
+
+    </div>
+
+    <div>
+
+        <input type="submit" value="Acessar">
+
+    </div>
+
+</form>
