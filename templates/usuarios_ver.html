@@ -2,7 +2,7 @@
 {% block  conteudo %}
 <p>Username: {{usr.username}}</p>
 <form action="usuario_atualizar.php" method="post">
-<input type="hidden" name="id" value="{{usuario.id}}"
+<input type="hidden" name="id" value="{{usuario.id}}">
   <label for="name">Name:</label>
   <input type="text" id="name" name="name" value="{{usr.nome}}"><br><br>
   <label for="email">Email:</label>
