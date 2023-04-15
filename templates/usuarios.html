@@ -11,27 +11,27 @@
     {% include "inc/head.html" %}
 
     <h1>Usuarios</h1>
-    <p>Listagem de usuarios</p>
+    <p>Listagem de alunos</p>
 
   
     <table border="5" class="table table-hover">
         <tr>
-
-            <td>Usuarios</td>
-            <td>Ativo</td>
-            <td>apagar</td>
+            <td>id</td>
+            <td>nome</td>
+            <td>datansc</td>
+           
         </tr>
 
         {% for usr in usuarios %}
             <tr>
-             <td><a href="usuario_ver.php?id={{usr.id}}">{{usr.username}}</a></td>
+             <td>{{usr.id}}</td>
 
-                <td>{{ usr.ativo }}</td>
-                <td><a href="usuario_apagar.php?id={{usr.id}}">Apagar</a></td>
+                <td>{{ usr.nome }}</td>
+                <td>{{ usr.datanasc }}</td>
             </tr>
-         
+        </table>
         {% endfor %}
-    </table>
+  
     <a href="boasvindas.php">boas vindas</a>
 </body>
 </html>

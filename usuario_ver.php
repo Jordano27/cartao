@@ -7,10 +7,10 @@ require('twig_carregar.php');
 require('models/Model.php');
 require('models/Usuario.php');
 
-$usr = new Usuario();
+$usr = new Aluno();
 
-$id = $_GET['id']?? false;
-$info = $usr->getById($id);
+$nome = $_GET['nome']?? false;
+$info = $usr->getByname($id);
 
  
 

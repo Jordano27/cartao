@@ -23,21 +23,24 @@ class Model
     $this->conex = new PDO("{$this->driver}:host={$this->host};port={$this->port};dbname={$this->dbname}",$this->user,$this->password);
 
 }
-public function getById($id){
-    $sql=$this->conex->prepare("SELECT * FROM {$this->table} WHERE id = :id ");
-    $sql->bindValue(':id' , $id);
+public function getByname($nome){
+    $sql=$this->conex->prepare("SELECT * FROM {$this->table} WHERE nome = :nome ");
+    $sql->bindValue(':nome' , $nome);
     $sql->execute();
      
     return $sql->fetch(PDO::FETCH_ASSOC);}
 
  
-    public function getAll(){
-        $sql=$this->conex->query("SELECT * FROM {$this->table}");   
+    public function get(){
+        $sql=$this->conex->query("SELECT * FROM {$this->table} WHERE nome = '{$_SESSION['nome']}' ;");   
         
-        return $sql->fetchALL(PDO::FETCH_ASSOC);
+        return $sql->fetchall(PDO::FETCH_ASSOC);
     
 }
 
+
+
+//{$_SESSION['nome']}
 public function create($data) {
     $sql = "INSERT INTO {$this->table}";
 //prepara os campos e place holder

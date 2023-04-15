@@ -7,8 +7,12 @@ require('twig_carregar.php');
 require('models/Model.php');
 require('models/Usuario.php');
 
-$usr = new Usuario();
-$alunos= $usr->getALL();
 
-echo $twig->render('usuarios.html', ['alunos' => $alunos]);
+$usr = new Aluno();
+$aluno= $usr->get();
+
+echo $_SESSION['nome'];
+echo $twig->render('usuarios.html', ['usuarios' => $aluno]);
+
+
 
